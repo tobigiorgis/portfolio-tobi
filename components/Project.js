@@ -10,7 +10,7 @@ const Project = ({name, image, id}) => {
 
     return (
         <div>
-            <Link href={`/projects/${newProject.id}`}>
+            <Link href={`/projects/${newProject.id}`} key={newProject.id}>
                 <Image
                 className={styles.pic}
                 src={newProject.image}

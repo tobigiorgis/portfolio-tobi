@@ -1,18 +1,40 @@
-import { useRouter } from 'next/router'
 import React from 'react'
-import Image from 'next/image'
 import ProjectDetail from '../../components/ProjectDetail'
 import details from '../../data/details'
 
-const ProjectId = () => {
 
-    // const router = useRouter()
-    // const name = router.query.name
-    // const imagen = router.query.image
-    // console.log(name)
+export async function getStaticPaths() {
+
+    const projectsIds = details.map((p) => ({
+        params: { projectId: `${p.id}` }
+    }))
+
+    return {
+        paths: projectsIds,
+        fallback: false
+    }
+}
+
+export async function getStaticProps(context) {
+    const { projectId } = context.params
+
+
+    const project = details.find((p) => p.id === Number(projectId))
+    console.log(project);
+
+    return {
+        props: {
+            name: project.name,
+            image: project.image
+        }
+    }
+}
+
+const ProjectId = ( {name, image}) => {
+
     return (
         <div>
-            <ProjectDetail/>
+            <ProjectDetail name={name} image={image}/>
             {/* <Image
             className={styles.pic}
             src={image}
@@ -25,28 +47,5 @@ const ProjectId = () => {
     )
 }
 
-// export async function getStaticPaths() {
-//     const projectsIds = details.map(p => ({
-//         params: { id: p.id }
-//     }))
-
-//     return {
-//         paths: projectsIds,
-//         fallback: false
-//     }
-// }
-
-// export async function getStaticProps(context) {
-//     const {id} = context.router.query
-
-//     const project = details.find(p => p.id === id)
-
-//     return {
-//         props: {
-//             name: project.name,
-//             image: project.image
-//         }
-//     }
-// }
 
 export default ProjectId

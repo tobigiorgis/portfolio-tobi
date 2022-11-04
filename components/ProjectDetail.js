@@ -4,7 +4,33 @@ import styles from '../styles/Projects.module.css'
 import { useRouter } from 'next/router'
 import details from '../data/details'
 
-const ProjectDetail = ( {name, image} ) => {
+// export async function getStaticPaths() {
+
+//     const projectsIds = details.map((p) => ({
+//         params: { projectId: `${p.id}` }
+//     }))
+
+//     return {
+//         paths: projectsIds,
+//         fallback: false
+//     }
+// }
+
+// export async function getStaticProps(context) {
+//     const { projectId } = context.params
+//     console.log(id);
+
+//     const project = details.find((p) => p.id === Number(projectId))
+//     console.log(project);
+
+//     return {
+//         props: {
+//             name: project.name,
+//             image: project.image
+//         }
+//     }
+// }
+const ProjectDetail = ( { name, image } ) => {
     
     const router = useRouter()
     // const newProject = {name, image}
@@ -26,31 +52,5 @@ const ProjectDetail = ( {name, image} ) => {
     )
 }
 
-export async function getStaticPaths() {
-
-    const projectsIds = details.map((p) => ({
-        params: { id: p.id }
-    }))
-
-    return {
-        paths: projectsIds,
-        fallback: false
-    }
-}
-
-export async function getStaticProps(context) {
-    const {id} = context.router.query
-    console.log(id);
-
-    const project = details.find((p) => p.id === id)
-    console.log(project);
-
-    return {
-        props: {
-            name: project.name,
-            image: project.image
-        }
-    }
-}
 
 export default ProjectDetail
