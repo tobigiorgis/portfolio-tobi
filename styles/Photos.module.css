@@ -1,3 +1,13 @@
+@font-face{
+    font-family: aeonikPro;
+    src: local('Aeonik-Medium.ttf'), url(../font/Aeonik-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: aeonikLight;
+    src: local('Aeonik-Light.ttf'), url(../font/Aeonik-Light.ttf) format('truetype');
+}
+
 .container{
     background-color: black;
     height: 100vh;
@@ -9,7 +19,8 @@
 }
 
 .title{
-    width: 80vw;
+    width: 100vw;
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -18,27 +29,56 @@
 
 .h1{
     color: white;
+    font-family: aeonikPro;
 }
 
 .phrase{
     margin-top: -15px;
     color: rgba(165, 165, 165, 1);
+    font-family: aeonikLight;
 }
 
 .photosDiv{
-    width: 25vw;
+    margin-bottom: 4vh;
+    padding: 2vh;
     display: flex;
+    flex-direction: row;
+    /* margin-top: -17vh; */
+    width: 100vw;
+    /* height: 100vh; */
+    justify-content: space-evenly;
+    gap: 10px;
+    /* align-items: center; */
+    overflow: scroll;
+}
+
+
+.photosDiv2{
+    /* margin-top: -23vh; */
+    height: 198vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
 }
 
 .image{
-    margin-right: 1vw;
+    margin-top: 1vw;
     filter: grayscale(100%);
 }
 
 .image:hover{
-    filter: grayscale(0%);
+    filter: grayscale(0%)
+}
+
+.footerContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+    /* position: relative; */
 }
 
 .footer {
@@ -54,5 +94,35 @@
     justify-content: center;
     align-items: center;
     /* filter: blur(7px); */
-    margin-bottom: 10vh;
+    /* margin-bottom: 10vh; */
+}
+
+@media screen and (max-width: 430px) {
+    .title{
+        width: 100vw;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .photosDiv{
+        margin-bottom: 0vh;
+        padding: 2vh;
+        display: flex;
+        flex-direction: row;
+        /* margin-top: -17vh; */
+        width: 100vw;
+        height: 100vh;
+        overflow: scroll;
+    }
+    
+    .photosDiv2{
+        /* margin-top: -23vh; */
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }

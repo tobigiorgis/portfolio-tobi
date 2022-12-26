@@ -1,6 +1,9 @@
 import React from 'react'
 import ProjectDetail from '../../components/ProjectDetail'
 import details from '../../data/details'
+import styles from '../../styles/Projects.module.css'
+import Island from '../../components/Island'
+import Image from 'next/image'
 
 
 export async function getStaticPaths() {
@@ -25,24 +28,35 @@ export async function getStaticProps(context) {
     return {
         props: {
             name: project.name,
-            image: project.image
+            images: project.images,
+            image: project.image,
+            description: project.description,
         }
     }
 }
 
-const ProjectId = ( {name, image}) => {
-
+const ProjectId = ( {name, images, image, description }) => {
     return (
-        <div>
-            <ProjectDetail name={name} image={image}/>
-            {/* <Image
-            className={styles.pic}
-            src={image}
-            alt={name}
-            width={1000}
-            height={500}
-            />
-            <p className={styles.name}>{name}</p> */}
+        <div className={styles.mainDetailDiv}>
+            <div className={styles.fullViewDiv}>
+                <ProjectDetail name={name} image={image}/>
+                <div className={styles.footerDiv}>
+                    <Island/>
+                </div>
+            </div>
+            <div className={styles.lastDiv}>
+                <div className={styles.descriptionDiv}>
+                    <p className={styles.projectDetails}>Project details</p>
+                    <p className={styles.projectDescription}>{description}</p>
+                </div>
+                <div className={styles.morePics}>
+                    {images.map((imagen) => (
+                        <div key={imagen} className={styles.pic2}>
+                        <Image className={styles.pic} src={imagen} alt='view' width={1300} height={600}/>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

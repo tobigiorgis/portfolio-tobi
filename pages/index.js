@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Island from '../components/Island'
 // import Mailto from 'react-mailto'
@@ -30,9 +28,9 @@ export default function Home() {
         </h2>
       </main>
 
-      <footer className={styles.footer}>
+      <div className={styles.footerContainer}>
         <Island/>
-      </footer>
+      </div>
     </div>
   )
 }

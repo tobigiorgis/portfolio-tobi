@@ -11,9 +11,9 @@ const projects = () => {
                 <p className={styles.phrase}>Great ideas require better designs.</p>
             </div>
             <ProjectList/>
-            <footer className={styles.footer}>
+            <div className={styles.footerContainer}>
                 <Island/>
-            </footer>
+            </div>
         </div>
     )
 }
