@@ -24,6 +24,8 @@ const ProjectDetail = ( { name, image } ) => {
                 height={500}
                 />
             </div>
+            <div className={styles.nameDiv}>
+            </div>
         </div>
     )
 }

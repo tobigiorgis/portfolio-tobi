@@ -121,25 +121,27 @@
 .divDetail{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100vw;
     margin-top: 4vh;
-    margin-left: -100px;
+    /* margin-left: -100px; */
     /* height: 100vh; */
 }
 
 .nameDetail{
     color: black;
-    margin-top: -50px;
-    width: 150px;
+    /* margin-top: -50px; */
+    /* width: 150px; */
     font-family: aeonikPro;
 }
 
 .nameDiv{
+    width: 20vw;
     display: flex;
     text-align: center;
-    justify-content: center;
+    /* justify-content: center; */
+    height: 10vh;
     rotate: 270deg;
 }
 
@@ -147,7 +149,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64vw;
+    width: 60vw;
 }
 
 .mainDetailDiv{
@@ -298,4 +300,12 @@
         align-items: center;
         margin-left: -10vw;
     }
+    .nameDetail{
+        font-size: 12px;
+    }
+
+    .projectDetails{
+        width: 20vw;
+    }
+
 }
