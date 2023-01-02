@@ -130,6 +130,12 @@
 }
 
 .nameDetail{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 20vh;
+    height: 10vh;
     color: black;
     /* margin-top: -50px; */
     /* width: 150px; */
@@ -140,7 +146,7 @@
     width: 20vw;
     display: flex;
     text-align: center;
-    /* justify-content: center; */
+    justify-content: center;
     height: 10vh;
     rotate: 270deg;
 }
@@ -216,6 +222,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 20vw;
+    color: black;
     background-color: #ebebeb;
     font-family: aeonikLight;
 }
